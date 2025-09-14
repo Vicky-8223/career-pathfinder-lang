@@ -89,6 +89,7 @@ const Auth = () => {
                   <SelectItem value="en">{t('auth.english')}</SelectItem>
                   <SelectItem value="hi">{t('auth.hindi')}</SelectItem>
                   <SelectItem value="ur">{t('auth.urdu')}</SelectItem>
+                  <SelectItem value="ks">{t('auth.kashmiri')}</SelectItem>
                 </SelectContent>
               </Select>
             </div>

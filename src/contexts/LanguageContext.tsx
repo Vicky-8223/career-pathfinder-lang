@@ -4,13 +4,15 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 import en from '@/lib/translations/en.json';
 import hi from '@/lib/translations/hi.json';
 import ur from '@/lib/translations/ur.json';
+import ks from '@/lib/translations/ks.json';
 
-export type Language = 'en' | 'hi' | 'ur';
+export type Language = 'en' | 'hi' | 'ur' | 'ks';
 
 const translations = {
   en,
   hi,
   ur,
+  ks,
 };
 
 interface LanguageContextType {

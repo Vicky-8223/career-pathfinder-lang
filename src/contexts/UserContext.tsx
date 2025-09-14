@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState, ReactNode } from 'react';
 export interface UserData {
   name: string;
   class: '10' | '12';
-  language: 'en' | 'hi' | 'ur';
+  language: 'en' | 'hi' | 'ur' | 'ks';
   recommendedStream?: 'science' | 'commerce' | 'arts';
   quizAnswers?: number[];
 }

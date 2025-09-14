@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useUser } from "@/contexts/UserContext";
 import { GraduationCap, MapPin, ArrowRight, Book, Briefcase, Palette } from "lucide-react";
+import { getCollegesByStream } from "@/data/collegesJK";
 
 const Courses = () => {
   const navigate = useNavigate();
@@ -41,11 +42,16 @@ const Courses = () => {
     }
   };
 
-  const colleges = [
-    { name: t('courses.colleges.college1'), location: 'Delhi', type: 'Engineering' },
-    { name: t('courses.colleges.college2'), location: 'Mumbai', type: 'Medical' },
-    { name: t('courses.colleges.college3'), location: 'Delhi', type: 'General' }
-  ];
+  // Get J&K colleges based on recommended stream
+  const streamColleges = getCollegesByStream(userData.recommendedStream);
+  
+  const colleges = streamColleges.slice(0, 3).map(college => ({
+    name: college.name,
+    location: college.district,
+    type: college.type.replace('Affiliated College', 'Affiliated').replace('Constituent / University College', 'University'),
+    university: college.universityName,
+    courses: college.courses?.slice(0, 2) || []
+  }));
 
   const courses = getStreamCourses();
 
