@@ -9,12 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+        default: "bg-gradient-primary text-white shadow-button hover:shadow-glow hover:scale-105 transition-all duration-300",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-lg hover:shadow-xl transition-all duration-300",
+        outline: "border-2 border-primary/20 bg-background/50 backdrop-blur-sm hover:bg-primary/10 hover:border-primary/40 hover:shadow-glow transition-all duration-300",
+        secondary: "bg-gradient-secondary text-white shadow-button hover:shadow-glow-secondary hover:scale-105 transition-all duration-300",
+        ghost: "hover:bg-accent/50 hover:backdrop-blur-sm transition-all duration-300",
+        link: "text-primary underline-offset-4 hover:underline hover:text-primary/80 transition-colors duration-300",
+        accent: "bg-gradient-accent text-white shadow-button hover:shadow-lg hover:scale-105 transition-all duration-300",
+        success: "bg-gradient-success text-white shadow-button hover:shadow-lg hover:scale-105 transition-all duration-300",
+        rainbow: "bg-gradient-rainbow text-white shadow-button hover:shadow-glow hover:scale-110 transition-all duration-500",
       },
       size: {
         default: "h-10 px-4 py-2",

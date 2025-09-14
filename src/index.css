@@ -8,54 +8,70 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 15% 97%;
-    --foreground: 215 25% 15%;
+    --background: 225 15% 98%;
+    --foreground: 220 30% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 220 30% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 220 30% 12%;
 
-    --primary: 210 100% 45%;
+    --primary: 262 83% 58%;
     --primary-foreground: 0 0% 100%;
+    --primary-glow: 262 83% 68%;
 
-    --secondary: 145 65% 55%;
+    --secondary: 192 76% 50%;
     --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 192 76% 60%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent-orange: 25 95% 53%;
+    --accent-pink: 330 81% 60%;
+    --accent-yellow: 45 93% 58%;
+    --accent-green: 142 71% 45%;
 
-    --accent: 210 100% 95%;
-    --accent-foreground: 210 100% 25%;
+    --muted: 225 15% 95%;
+    --muted-foreground: 220 15% 45%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 225 15% 92%;
+    --accent-foreground: 220 30% 25%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 210 100% 45%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --radius: 0.75rem;
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 262 83% 58%;
+
+    --radius: 1rem;
     
-    /* Educational Theme Colors */
-    --education-primary: 210 100% 45%;
-    --education-secondary: 145 65% 55%;
-    --education-accent: 35 100% 65%;
-    --education-success: 145 65% 55%;
+    /* Dynamic Theme Colors */
+    --education-primary: 262 83% 58%;
+    --education-secondary: 192 76% 50%;
+    --education-accent: 25 95% 53%;
+    --education-success: 142 71% 45%;
     
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 45%), hsl(220 100% 55%));
-    --gradient-secondary: linear-gradient(135deg, hsl(145 65% 55%), hsl(155 65% 45%));
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 45%) 0%, hsl(145 65% 55%) 100%);
+    /* Dynamic Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(330 81% 60%) 100%);
+    --gradient-secondary: linear-gradient(135deg, hsl(192 76% 50%) 0%, hsl(142 71% 45%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(192 76% 50%) 50%, hsl(25 95% 53%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(225 15% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(25 95% 53%) 0%, hsl(45 93% 58%) 100%);
+    --gradient-success: linear-gradient(135deg, hsl(142 71% 45%) 0%, hsl(120 60% 50%) 100%);
+    --gradient-rainbow: linear-gradient(135deg, hsl(262 83% 58%) 0%, hsl(192 76% 50%) 25%, hsl(142 71% 45%) 50%, hsl(45 93% 58%) 75%, hsl(330 81% 60%) 100%);
     
-    /* Shadows */
-    --shadow-card: 0 4px 6px -1px hsl(210 40% 85% / 0.1), 0 2px 4px -2px hsl(210 40% 85% / 0.1);
-    --shadow-elevated: 0 10px 15px -3px hsl(210 40% 85% / 0.1), 0 4px 6px -4px hsl(210 40% 85% / 0.1);
+    /* Enhanced Shadows */
+    --shadow-card: 0 4px 20px -2px hsl(262 83% 58% / 0.08), 0 2px 8px -2px hsl(262 83% 58% / 0.04);
+    --shadow-elevated: 0 20px 40px -8px hsl(262 83% 58% / 0.12), 0 8px 20px -4px hsl(262 83% 58% / 0.08);
+    --shadow-glow: 0 0 40px hsl(262 83% 58% / 0.3);
+    --shadow-glow-secondary: 0 0 40px hsl(192 76% 50% / 0.3);
+    --shadow-button: 0 8px 32px -8px hsl(262 83% 58% / 0.3);
     
-    /* Animations */
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    --transition-bounce: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Dynamic Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --transition-spring: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    --transition-elastic: all 0.6s cubic-bezier(0.68, -0.6, 0.32, 1.6);
 
     --sidebar-background: 0 0% 98%;
 
@@ -75,33 +91,40 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    --background: 220 30% 6%;
+    --foreground: 225 15% 95%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 220 30% 8%;
+    --card-foreground: 225 15% 95%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 220 30% 8%;
+    --popover-foreground: 225 15% 95%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 262 83% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-glow: 262 83% 75%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 192 76% 55%;
+    --secondary-foreground: 0 0% 100%;
+    --secondary-glow: 192 76% 65%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent-orange: 25 95% 60%;
+    --accent-pink: 330 81% 65%;
+    --accent-yellow: 45 93% 65%;
+    --accent-green: 142 71% 50%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --muted: 220 20% 12%;
+    --muted-foreground: 220 15% 65%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --accent: 220 20% 15%;
+    --accent-foreground: 225 15% 85%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 220 20% 18%;
+    --input: 220 20% 18%;
+    --ring: 262 83% 65%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -120,5 +143,93 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  /* Dynamic Animation Classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-gradient-shift {
+    animation: gradient-shift 8s ease infinite;
+    background-size: 400% 400%;
+  }
+  
+  .animate-bounce-soft {
+    animation: bounce-soft 2s infinite;
+  }
+  
+  /* Interactive Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-elevated;
+  }
+  
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-glow;
+  }
+  
+  .hover-tilt {
+    @apply transition-transform duration-300 hover:rotate-1 hover:scale-105;
+  }
+  
+  .glassmorphism {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+}
+
+@layer components {
+  /* Dynamic Card Styles */
+  .card-dynamic {
+    @apply bg-gradient-card shadow-card hover-lift rounded-lg;
+  }
+  
+  .card-glow {
+    @apply bg-card/50 backdrop-blur-sm border border-primary/20 shadow-glow/20 hover:shadow-glow/40 transition-all duration-500;
+  }
+}
+
+/* Dynamic Keyframes */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.3);
+  }
+  100% {
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.6);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes bounce-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
   }
 }

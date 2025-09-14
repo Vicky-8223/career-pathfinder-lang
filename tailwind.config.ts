@@ -63,19 +63,38 @@ export default {
           accent: "hsl(var(--education-accent))",
           success: "hsl(var(--education-success))",
         },
+        accent: {
+          orange: "hsl(var(--accent-orange))",
+          pink: "hsl(var(--accent-pink))",
+          yellow: "hsl(var(--accent-yellow))",
+          green: "hsl(var(--accent-green))",
+        },
+        glow: {
+          primary: "hsl(var(--primary-glow))",
+          secondary: "hsl(var(--secondary-glow))",
+        },
       },
       backgroundImage: {
         'gradient-primary': 'var(--gradient-primary)',
         'gradient-secondary': 'var(--gradient-secondary)',
         'gradient-hero': 'var(--gradient-hero)',
+        'gradient-card': 'var(--gradient-card)',
+        'gradient-accent': 'var(--gradient-accent)',
+        'gradient-success': 'var(--gradient-success)',
+        'gradient-rainbow': 'var(--gradient-rainbow)',
       },
       boxShadow: {
         'card': 'var(--shadow-card)',
         'elevated': 'var(--shadow-elevated)',
+        'glow': 'var(--shadow-glow)',
+        'glow-secondary': 'var(--shadow-glow-secondary)',
+        'button': 'var(--shadow-button)',
       },
       transitionTimingFunction: {
         'smooth': 'var(--transition-smooth)',
         'bounce': 'var(--transition-bounce)',
+        'spring': 'var(--transition-spring)',
+        'elastic': 'var(--transition-elastic)',
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -99,10 +118,60 @@ export default {
             height: "0",
           },
         },
+        "float": {
+          "0%, 100%": {
+            transform: "translateY(0px)",
+          },
+          "50%": {
+            transform: "translateY(-20px)",
+          },
+        },
+        "pulse-glow": {
+          "0%": {
+            boxShadow: "0 0 20px hsl(var(--primary) / 0.3)",
+          },
+          "100%": {
+            boxShadow: "0 0 40px hsl(var(--primary) / 0.6)",
+          },
+        },
+        "gradient-shift": {
+          "0%": {
+            backgroundPosition: "0% 50%",
+          },
+          "50%": {
+            backgroundPosition: "100% 50%",
+          },
+          "100%": {
+            backgroundPosition: "0% 50%",
+          },
+        },
+        "bounce-soft": {
+          "0%, 100%": {
+            transform: "translateY(0)",
+          },
+          "50%": {
+            transform: "translateY(-10px)",
+          },
+        },
+        "fade-in": {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(10px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "float": "float 6s ease-in-out infinite",
+        "pulse-glow": "pulse-glow 2s ease-in-out infinite alternate",
+        "gradient-shift": "gradient-shift 8s ease infinite",
+        "bounce-soft": "bounce-soft 2s infinite",
+        "fade-in": "fade-in 0.3s ease-out",
       },
     },
   },
