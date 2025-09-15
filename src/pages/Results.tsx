@@ -45,40 +45,40 @@ const Results = () => {
   const streamDescription = t(`results.${userData.recommendedStream}Desc`);
 
   return (
-    <div className="min-h-screen bg-gradient-hero animate-gradient-shift p-4">
+    <div className="min-h-screen bg-gradient-hero scroll-smooth p-4">
       <div className="container mx-auto max-w-2xl py-8">
         {/* Results Header */}
         <div className="text-center mb-8 animate-fade-in">
-          <h1 className="text-3xl font-bold mb-4 glow-text animate-bounce-soft">{t('results.title')}</h1>
-          <p className="text-lg text-white/80 hover:text-white transition-colors duration-300">{t('results.recommendation')}</p>
+          <h1 className="text-3xl font-bold mb-4 text-primary">{t('results.title')}</h1>
+          <p className="text-lg text-muted-foreground">{t('results.recommendation')}</p>
         </div>
 
         {/* Recommendation Card */}
-        <Card className="shadow-elevated mb-8 overflow-hidden hover-lift animate-float">
-          <div className={`bg-gradient-primary p-8 animate-gradient-shift`}>
-            <div className="flex items-center justify-center mb-6 animate-float">
-              <div className="p-6 bg-white/20 rounded-full backdrop-blur-sm animate-pulse-glow hover:scale-125 transition-all duration-500">
+        <Card className="card-professional mb-8 overflow-hidden animate-slide-up">
+          <div className="bg-primary p-8">
+            <div className="flex items-center justify-center mb-6">
+              <div className="p-6 bg-white rounded-full smooth-transition hover-scale">
                 {getStreamIcon(userData.recommendedStream)}
               </div>
             </div>
-            <h2 className="text-3xl font-bold text-white text-center mb-4 glow-text animate-bounce-soft">
+            <h2 className="text-3xl font-bold text-white text-center mb-4">
               {streamTitle}
             </h2>
           </div>
           
           <CardContent className="p-6">
-            <p className="text-center text-muted-foreground text-lg mb-6">
+            <p className="text-center text-muted-foreground text-lg mb-6 animate-slide-in">
               {streamDescription}
             </p>
             
             {/* Success Message */}
-            <div className="bg-education-success/10 border border-education-success/20 rounded-lg p-4 mb-6">
+            <div className="bg-primary/5 border border-primary/20 rounded-lg p-4 mb-6 animate-slide-in" style={{ animationDelay: '200ms' }}>
               <div className="flex items-center gap-3">
-                <div className="p-2 bg-education-success/20 rounded-full">
-                  <GraduationCap className="h-5 w-5 text-education-success" />
+                <div className="p-2 bg-primary/10 rounded-full">
+                  <GraduationCap className="h-5 w-5 text-primary" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-education-success">Congratulations!</h3>
+                  <h3 className="font-semibold text-primary">Congratulations!</h3>
                   <p className="text-sm text-muted-foreground">
                     You've completed the career guidance quiz successfully.
                   </p>
@@ -87,19 +87,19 @@ const Results = () => {
             </div>
 
             {/* Next Steps */}
-            <div className="space-y-4">
+            <div className="space-y-4 animate-slide-in" style={{ animationDelay: '400ms' }}>
               <h3 className="font-semibold text-center">What's Next?</h3>
               <div className="grid gap-3">
-                <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
-                  <BookOpen className="h-5 w-5 text-education-primary" />
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-muted hover-lift smooth-transition">
+                  <BookOpen className="h-5 w-5 text-primary" />
                   <span className="text-sm">Explore recommended courses</span>
                 </div>
-                <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
-                  <GraduationCap className="h-5 w-5 text-education-secondary" />
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-muted hover-lift smooth-transition">
+                  <GraduationCap className="h-5 w-5 text-primary" />
                   <span className="text-sm">Find nearby government colleges</span>
                 </div>
-                <div className="flex items-center gap-3 p-3 rounded-lg bg-muted/50">
-                  <Briefcase className="h-5 w-5 text-education-accent" />
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-muted hover-lift smooth-transition">
+                  <Briefcase className="h-5 w-5 text-primary" />
                   <span className="text-sm">Access your personalized dashboard</span>
                 </div>
               </div>
@@ -108,12 +108,11 @@ const Results = () => {
         </Card>
 
         {/* Action Buttons */}
-        <div className="flex flex-col gap-4 animate-fade-in">
+        <div className="flex flex-col gap-4 animate-fade-in" style={{ animationDelay: '600ms' }}>
           <Button
             onClick={() => navigate('/courses')}
             size="lg"
-            variant="rainbow"
-            className="text-white flex items-center gap-2 hover:scale-110 hover:rotate-1 transition-all duration-500 animate-pulse-glow"
+            className="flex items-center gap-2 smooth-transition hover-scale"
           >
             {t('results.viewCourses')}
             <ArrowRight className="h-4 w-4" />
@@ -123,7 +122,7 @@ const Results = () => {
             onClick={() => navigate('/dashboard')}
             variant="outline"
             size="lg"
-            className="flex items-center gap-2 glassmorphism text-white hover:text-primary border-white/30 hover:scale-105 transition-all duration-300"
+            className="flex items-center gap-2 smooth-transition hover-scale"
           >
             Go to Dashboard
             <ArrowRight className="h-4 w-4" />

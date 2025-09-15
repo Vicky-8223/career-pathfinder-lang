@@ -56,44 +56,44 @@ const Courses = () => {
   const courses = getStreamCourses();
 
   return (
-    <div className="min-h-screen bg-gradient-hero animate-gradient-shift p-4">
+    <div className="min-h-screen bg-gradient-hero scroll-smooth p-4">
       <div className="container mx-auto max-w-4xl py-8">
         {/* Header */}
         <div className="text-center mb-8 animate-fade-in">
-          <h1 className="text-3xl font-bold mb-4 glow-text animate-bounce-soft">{t('courses.title')}</h1>
-          <Badge variant="secondary" className="mb-4 hover:scale-110 transition-all duration-300 animate-pulse-glow">
+          <h1 className="text-3xl font-bold mb-4 text-primary">{t('courses.title')}</h1>
+          <Badge variant="secondary" className="mb-4 smooth-transition hover-scale">
             Recommended for {t(`results.${userData.recommendedStream}`)}
           </Badge>
         </div>
 
         {/* Degree Options Section */}
         <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-            <Book className="h-6 w-6 text-education-primary" />
+          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 animate-slide-in">
+            <Book className="h-6 w-6 text-primary" />
             {t('courses.degreeOptions')}
           </h2>
           
           <div className="grid md:grid-cols-3 gap-6">
             {courses.map((course, index) => (
-              <Card key={index} className="shadow-elevated hover-float group transform transition-all duration-700 hover:rotate-1 animate-fade-in">
+              <Card key={index} className="card-professional hover-lift animate-slide-up" style={{ animationDelay: `${index * 100}ms` }}>
                 <CardHeader className="pb-4">
                   <div className="flex items-center gap-3 mb-2">
-                    <div className="p-3 bg-gradient-primary rounded-lg text-white group-hover:animate-pulse-glow transition-all duration-500 group-hover:scale-125">
+                    <div className="p-3 bg-primary rounded-lg text-white smooth-transition hover-scale">
                       {course.icon}
                     </div>
-                    <Badge variant="outline" className="group-hover:scale-110 transition-all duration-300">{course.duration}</Badge>
+                    <Badge variant="outline" className="smooth-transition hover-scale">{course.duration}</Badge>
                   </div>
-                  <CardTitle className="text-lg group-hover:scale-105 transition-transform duration-300 glow-text">{course.name}</CardTitle>
+                  <CardTitle className="text-lg">{course.name}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-white/70 mb-4 group-hover:text-white transition-colors duration-300">
+                  <p className="text-sm text-muted-foreground mb-4">
                     A comprehensive program designed to build strong foundation and practical skills in your chosen field.
                   </p>
                   <div className="flex justify-between items-center">
-                    <span className="text-sm text-accent-green font-medium group-hover:scale-105 transition-transform duration-300">
+                    <span className="text-sm text-primary font-medium">
                       High Demand
                     </span>
-                    <Button variant="ghost" size="sm" className="hover:scale-110 transition-all duration-300">
+                    <Button variant="ghost" size="sm" className="smooth-transition hover-scale">
                       Learn More
                       <ArrowRight className="h-4 w-4 ml-1" />
                     </Button>
@@ -106,38 +106,38 @@ const Courses = () => {
 
         {/* Nearby Colleges Section */}
         <div className="mb-8">
-          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2">
-            <MapPin className="h-6 w-6 text-education-secondary" />
+          <h2 className="text-2xl font-semibold mb-6 flex items-center gap-2 animate-slide-in" style={{ animationDelay: '400ms' }}>
+            <MapPin className="h-6 w-6 text-primary" />
             {t('courses.nearbyColleges')}
           </h2>
           
           <div className="space-y-4">
             {colleges.map((college, index) => (
-              <Card key={index} className="shadow-elevated hover-lift group transform transition-all duration-500 hover:rotate-1 animate-fade-in">
+              <Card key={index} className="card-professional hover-lift animate-slide-up" style={{ animationDelay: `${(index + 3) * 100}ms` }}>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-4">
-                      <div className="p-4 bg-gradient-secondary rounded-lg group-hover:animate-pulse-glow transition-all duration-500 group-hover:scale-125">
+                      <div className="p-4 bg-primary rounded-lg smooth-transition hover-scale">
                         <GraduationCap className="h-8 w-8 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-lg glow-text group-hover:scale-105 transition-transform duration-300">{college.name}</h3>
+                        <h3 className="font-semibold text-lg">{college.name}</h3>
                         <div className="flex items-center gap-4 mt-1">
-                          <div className="flex items-center gap-1 text-sm text-white/70 group-hover:text-white transition-colors duration-300">
+                          <div className="flex items-center gap-1 text-sm text-muted-foreground">
                             <MapPin className="h-4 w-4" />
                             {college.location}
                           </div>
-                          <Badge variant="secondary" className="text-xs group-hover:scale-110 transition-all duration-300">
+                          <Badge variant="secondary" className="text-xs smooth-transition hover-scale">
                             {college.type}
                           </Badge>
                         </div>
                       </div>
                     </div>
                     <div className="flex gap-2">
-                      <Button variant="outline" size="sm" className="glassmorphism text-white hover:text-primary border-white/30 hover:scale-105 transition-all duration-300">
+                      <Button variant="outline" size="sm" className="smooth-transition hover-scale">
                         View Details
                       </Button>
-                      <Button size="sm" variant="secondary" className="hover:scale-110 transition-all duration-300">
+                      <Button size="sm" className="smooth-transition hover-scale">
                         Apply
                       </Button>
                     </div>
@@ -149,12 +149,11 @@ const Courses = () => {
         </div>
 
         {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '800ms' }}>
           <Button
             onClick={() => navigate('/dashboard')}
             size="lg"
-            variant="rainbow"
-            className="text-white hover:scale-110 hover:rotate-1 transition-all duration-500 animate-pulse-glow"
+            className="smooth-transition hover-scale"
           >
             Go to Dashboard
             <ArrowRight className="h-4 w-4 ml-2" />
@@ -164,7 +163,7 @@ const Courses = () => {
             onClick={() => navigate('/results')}
             variant="outline"
             size="lg"
-            className="glassmorphism text-white hover:text-primary border-white/30 hover:scale-105 transition-all duration-300"
+            className="smooth-transition hover-scale"
           >
             Back to Results
           </Button>
