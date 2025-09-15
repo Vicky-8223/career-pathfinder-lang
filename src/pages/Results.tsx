@@ -45,23 +45,23 @@ const Results = () => {
   const streamDescription = t(`results.${userData.recommendedStream}Desc`);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-education-primary/10 via-background to-education-secondary/10 p-4">
+    <div className="min-h-screen bg-gradient-hero animate-gradient-shift p-4">
       <div className="container mx-auto max-w-2xl py-8">
         {/* Results Header */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold mb-4">{t('results.title')}</h1>
-          <p className="text-lg text-muted-foreground">{t('results.recommendation')}</p>
+        <div className="text-center mb-8 animate-fade-in">
+          <h1 className="text-3xl font-bold mb-4 glow-text animate-bounce-soft">{t('results.title')}</h1>
+          <p className="text-lg text-white/80 hover:text-white transition-colors duration-300">{t('results.recommendation')}</p>
         </div>
 
         {/* Recommendation Card */}
-        <Card className="shadow-xl mb-8 overflow-hidden">
-          <div className={`bg-gradient-to-r ${getStreamColor(userData.recommendedStream)} p-6`}>
-            <div className="flex items-center justify-center mb-4">
-              <div className="p-4 bg-white/20 rounded-full backdrop-blur-sm">
+        <Card className="shadow-elevated mb-8 overflow-hidden hover-lift animate-float">
+          <div className={`bg-gradient-primary p-8 animate-gradient-shift`}>
+            <div className="flex items-center justify-center mb-6 animate-float">
+              <div className="p-6 bg-white/20 rounded-full backdrop-blur-sm animate-pulse-glow hover:scale-125 transition-all duration-500">
                 {getStreamIcon(userData.recommendedStream)}
               </div>
             </div>
-            <h2 className="text-2xl font-bold text-white text-center mb-2">
+            <h2 className="text-3xl font-bold text-white text-center mb-4 glow-text animate-bounce-soft">
               {streamTitle}
             </h2>
           </div>
@@ -108,11 +108,12 @@ const Results = () => {
         </Card>
 
         {/* Action Buttons */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 animate-fade-in">
           <Button
             onClick={() => navigate('/courses')}
             size="lg"
-            className="bg-gradient-to-r from-education-primary to-education-secondary hover:from-education-primary/90 hover:to-education-secondary/90 text-white flex items-center gap-2"
+            variant="rainbow"
+            className="text-white flex items-center gap-2 hover:scale-110 hover:rotate-1 transition-all duration-500 animate-pulse-glow"
           >
             {t('results.viewCourses')}
             <ArrowRight className="h-4 w-4" />
@@ -122,7 +123,7 @@ const Results = () => {
             onClick={() => navigate('/dashboard')}
             variant="outline"
             size="lg"
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 glassmorphism text-white hover:text-primary border-white/30 hover:scale-105 transition-all duration-300"
           >
             Go to Dashboard
             <ArrowRight className="h-4 w-4" />

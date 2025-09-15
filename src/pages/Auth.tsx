@@ -41,35 +41,35 @@ const Auth = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-education-primary/10 via-background to-education-secondary/10 flex items-center justify-center p-4">
-      <Card className="w-full max-w-md shadow-lg">
+    <div className="min-h-screen bg-gradient-hero animate-gradient-shift flex items-center justify-center p-4">
+      <Card className="w-full max-w-md shadow-elevated hover-lift animate-fade-in transform">
         <CardHeader className="text-center">
-          <div className="flex justify-center mb-4">
-            <div className="p-3 bg-gradient-to-r from-education-primary to-education-secondary rounded-full">
-              <GraduationCap className="h-8 w-8 text-white" />
+          <div className="flex justify-center mb-4 animate-float">
+            <div className="p-4 bg-gradient-primary rounded-full animate-pulse-glow hover:scale-110 transition-all duration-500">
+              <GraduationCap className="h-10 w-10 text-white" />
             </div>
           </div>
-          <CardTitle className="text-2xl font-bold bg-gradient-to-r from-education-primary to-education-secondary bg-clip-text text-transparent">
+          <CardTitle className="text-2xl font-bold glow-text animate-bounce-soft">
             {t('auth.welcome')}
           </CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="space-y-2">
+            <div className="space-y-2 transform hover:scale-105 transition-all duration-300">
               <label className="text-sm font-medium">{t('auth.enterName')}</label>
               <Input
                 type="text"
                 placeholder={t('common.name')}
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                className="w-full"
+                className="w-full hover-glow transition-all duration-300"
               />
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 transform hover:scale-105 transition-all duration-300">
               <label className="text-sm font-medium">{t('auth.selectClass')}</label>
               <Select onValueChange={(value: "10" | "12") => setFormData({ ...formData, class: value })}>
-                <SelectTrigger>
+                <SelectTrigger className="hover-glow transition-all duration-300">
                   <SelectValue placeholder={t('common.class')} />
                 </SelectTrigger>
                 <SelectContent>
@@ -79,10 +79,10 @@ const Auth = () => {
               </Select>
             </div>
 
-            <div className="space-y-2">
+            <div className="space-y-2 transform hover:scale-105 transition-all duration-300">
               <label className="text-sm font-medium">{t('auth.selectLanguage')}</label>
               <Select onValueChange={(value: Language) => setFormData({ ...formData, selectedLanguage: value })} defaultValue={language}>
-                <SelectTrigger>
+                <SelectTrigger className="hover-glow transition-all duration-300">
                   <SelectValue placeholder={t('common.language')} />
                 </SelectTrigger>
                 <SelectContent>
@@ -96,7 +96,8 @@ const Auth = () => {
 
             <Button 
               type="submit" 
-              className="w-full bg-gradient-to-r from-education-primary to-education-secondary hover:from-education-primary/90 hover:to-education-secondary/90 text-white"
+              variant="rainbow"
+              className="w-full text-white hover:scale-110 hover:rotate-1 transition-all duration-500 animate-pulse-glow"
               size="lg"
             >
               {t('auth.getStarted')}

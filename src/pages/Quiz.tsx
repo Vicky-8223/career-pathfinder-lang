@@ -118,45 +118,45 @@ const Quiz = () => {
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-education-primary/10 via-background to-education-secondary/10 p-4">
+    <div className="min-h-screen bg-gradient-hero animate-gradient-shift p-4">
       <div className="container mx-auto max-w-2xl py-8">
         {/* Progress Header */}
-        <div className="mb-8">
+        <div className="mb-8 animate-fade-in">
           <div className="flex justify-between items-center mb-4">
-            <h1 className="text-2xl font-bold text-foreground">{t('quiz.title')}</h1>
-            <span className="text-sm text-muted-foreground">
+            <h1 className="text-2xl font-bold text-white glow-text animate-bounce-soft">{t('quiz.title')}</h1>
+            <span className="text-sm text-white/80 hover:text-white transition-colors duration-300">
               {t('quiz.question')} {currentQuestion + 1} {t('quiz.of')} {questions.length}
             </span>
           </div>
-          <Progress value={progress} className="h-2" />
+          <Progress value={progress} className="h-3 animate-pulse-glow" />
         </div>
 
         {/* Question Card */}
-        <Card className="shadow-lg mb-8">
+        <Card className="shadow-elevated mb-8 hover-lift animate-float">
           <CardContent className="p-8">
-            <h2 className="text-xl font-semibold mb-6 text-center">
+            <h2 className="text-xl font-semibold mb-6 text-center glow-text animate-bounce-soft">
               {questions[currentQuestion].question}
             </h2>
             
-            <div className="grid gap-3">
+            <div className="grid gap-4">
               {questions[currentQuestion].options.map((option, index) => (
                 <button
                   key={index}
                   onClick={() => handleAnswerSelect(index)}
-                  className={`p-4 rounded-lg border-2 text-left transition-all hover:shadow-md ${
+                  className={`p-4 rounded-lg border-2 text-left transition-all duration-500 hover:shadow-elevated transform hover:scale-105 hover:-rotate-1 ${
                     answers[currentQuestion] === index
-                      ? 'border-education-primary bg-education-primary/10 shadow-md'
-                      : 'border-border hover:border-education-primary/50'
+                      ? 'border-primary bg-gradient-primary/20 shadow-glow animate-pulse-glow'
+                      : 'border-border hover:border-primary/50 hover-glow'
                   }`}
                 >
                   <div className="flex items-center gap-3">
-                    <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${
+                    <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${
                       answers[currentQuestion] === index
-                        ? 'border-education-primary bg-education-primary'
-                        : 'border-muted-foreground'
+                        ? 'border-primary bg-primary animate-bounce-soft'
+                        : 'border-muted-foreground hover:border-primary'
                     }`}>
                       {answers[currentQuestion] === index && (
-                        <div className="w-2 h-2 rounded-full bg-white" />
+                        <div className="w-2 h-2 rounded-full bg-white animate-pulse" />
                       )}
                     </div>
                     <span className="font-medium">{option}</span>
@@ -168,12 +168,12 @@ const Quiz = () => {
         </Card>
 
         {/* Navigation */}
-        <div className="flex justify-between gap-4">
+        <div className="flex justify-between gap-4 animate-fade-in">
           <Button
             onClick={handleBack}
             variant="outline"
             disabled={currentQuestion === 0}
-            className="flex items-center gap-2"
+            className="flex items-center gap-2 glassmorphism text-white hover:text-primary border-white/30 hover:scale-105 transition-all duration-300"
           >
             <ChevronLeft className="h-4 w-4" />
             {t('common.back')}
@@ -182,7 +182,8 @@ const Quiz = () => {
           <Button
             onClick={handleNext}
             disabled={answers[currentQuestion] === -1}
-            className="flex items-center gap-2 bg-gradient-to-r from-education-primary to-education-secondary hover:from-education-primary/90 hover:to-education-secondary/90 text-white"
+            variant="rainbow"
+            className="flex items-center gap-2 text-white hover:scale-110 hover:rotate-1 transition-all duration-500 animate-pulse-glow"
           >
             {currentQuestion === questions.length - 1 ? t('common.submit') : t('common.next')}
             <ChevronRight className="h-4 w-4" />
