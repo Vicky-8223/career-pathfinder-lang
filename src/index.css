@@ -167,19 +167,37 @@ All colors MUST be HSL.
   
   /* Interactive Hover Effects */
   .hover-lift {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-elevated;
+    @apply transition-all duration-500 hover:scale-110 hover:shadow-elevated;
   }
   
   .hover-glow {
-    @apply transition-all duration-300 hover:shadow-glow;
+    @apply transition-all duration-500;
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 60px hsl(var(--primary) / 0.6);
   }
   
   .hover-tilt {
-    @apply transition-transform duration-300 hover:rotate-1 hover:scale-105;
+    @apply transition-all duration-500 hover:rotate-2 hover:scale-110;
+  }
+  
+  .hover-float {
+    @apply transition-all duration-700 hover:-translate-y-4 hover:scale-105;
   }
   
   .glassmorphism {
     @apply bg-white/10 backdrop-blur-md border border-white/20;
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+  
+  .parallax-bg {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
   }
 }
 
@@ -190,7 +208,12 @@ All colors MUST be HSL.
   }
   
   .card-glow {
-    @apply bg-card/50 backdrop-blur-sm border border-primary/20 shadow-glow/20 hover:shadow-glow/40 transition-all duration-500;
+    @apply bg-card/50 backdrop-blur-sm border border-primary/20 transition-all duration-500;
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.2);
+  }
+  
+  .card-glow:hover {
+    box-shadow: 0 0 60px hsl(var(--primary) / 0.4);
   }
 }
 

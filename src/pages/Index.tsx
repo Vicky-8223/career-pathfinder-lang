@@ -20,9 +20,11 @@ const Index = () => {
             </div>
           </div>
           
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-            Career Guidance Platform
-            <span className="block text-3xl md:text-5xl mt-4 text-white/80 animate-bounce-soft">
+          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 glow-text animate-fade-in">
+            <span className="bg-gradient-rainbow bg-clip-text text-transparent animate-gradient-shift">
+              Career Guidance Platform
+            </span>
+            <span className="block text-3xl md:text-5xl mt-4 text-white/90 animate-bounce-soft glow-text">
               Shape Your Future
             </span>
           </h1>
@@ -32,23 +34,23 @@ const Index = () => {
             Take our smart quiz and unlock personalized recommendations for your future.
           </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in">
             <Button 
               onClick={() => navigate('/auth')}
               variant="rainbow"
               size="lg"
-              className="text-lg px-8 py-4"
+              className="text-lg px-10 py-5 transform hover:scale-110 hover:rotate-1 transition-all duration-500 hover-glow animate-pulse-glow"
             >
-              <Zap className="w-5 h-5 mr-2" />
+              <Zap className="w-6 h-6 mr-3" />
               Get Started
             </Button>
             
             <Button 
               variant="outline"
               size="lg"
-              className="text-lg px-8 py-4 glassmorphism text-white hover:text-primary border-white/30"
+              className="text-lg px-10 py-5 glassmorphism text-white hover:text-primary border-white/30 transform hover:scale-105 hover:-rotate-1 transition-all duration-500 hover:bg-white/20"
             >
-              <Target className="w-5 h-5 mr-2" />
+              <Target className="w-6 h-6 mr-3" />
               Learn More
             </Button>
           </div>
@@ -67,34 +69,43 @@ const Index = () => {
         </div>
         
         <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div className="card-glow p-8 text-center hover-tilt group">
-            <div className="bg-gradient-primary p-4 rounded-full w-16 h-16 mx-auto mb-6 group-hover:animate-bounce-soft">
-              <BookOpen className="w-8 h-8 text-white" />
+          <div className="card-glow p-8 text-center hover-float group transform transition-all duration-700 hover:rotate-1">
+            <div className="bg-gradient-primary p-4 rounded-full w-20 h-20 mx-auto mb-6 group-hover:animate-pulse-glow transition-all duration-500 group-hover:scale-125">
+              <BookOpen className="w-12 h-12 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">Smart Quiz</h3>
-            <p className="text-white/80 leading-relaxed">
+            <h3 className="text-2xl font-bold text-white mb-4 glow-text group-hover:scale-105 transition-transform duration-300">Smart Quiz</h3>
+            <p className="text-white/80 leading-relaxed group-hover:text-white transition-colors duration-300">
               Answer 10 intelligent questions designed to discover your interests, strengths, and career preferences.
             </p>
+            <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <Sparkles className="w-6 h-6 text-accent-yellow mx-auto animate-bounce-soft" />
+            </div>
           </div>
 
-          <div className="card-glow p-8 text-center hover-tilt group">
-            <div className="bg-gradient-secondary p-4 rounded-full w-16 h-16 mx-auto mb-6 group-hover:animate-bounce-soft">
-              <GraduationCap className="w-8 h-8 text-white" />
+          <div className="card-glow p-8 text-center hover-float group transform transition-all duration-700 hover:-rotate-1">
+            <div className="bg-gradient-secondary p-4 rounded-full w-20 h-20 mx-auto mb-6 group-hover:animate-pulse-glow transition-all duration-500 group-hover:scale-125">
+              <GraduationCap className="w-12 h-12 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">Stream Recommendation</h3>
-            <p className="text-white/80 leading-relaxed">
+            <h3 className="text-2xl font-bold text-white mb-4 glow-text group-hover:scale-105 transition-transform duration-300">Stream Recommendation</h3>
+            <p className="text-white/80 leading-relaxed group-hover:text-white transition-colors duration-300">
               Get AI-powered personalized recommendations for Science, Commerce, or Arts streams based on your profile.
             </p>
+            <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <Target className="w-6 h-6 text-accent-green mx-auto animate-bounce-soft" />
+            </div>
           </div>
 
-          <div className="card-glow p-8 text-center hover-tilt group">
-            <div className="bg-gradient-accent p-4 rounded-full w-16 h-16 mx-auto mb-6 group-hover:animate-bounce-soft">
-              <Users className="w-8 h-8 text-white" />
+          <div className="card-glow p-8 text-center hover-float group transform transition-all duration-700 hover:rotate-1">
+            <div className="bg-gradient-accent p-4 rounded-full w-20 h-20 mx-auto mb-6 group-hover:animate-pulse-glow transition-all duration-500 group-hover:scale-125">
+              <Users className="w-12 h-12 text-white" />
             </div>
-            <h3 className="text-2xl font-bold text-white mb-4">College Info</h3>
-            <p className="text-white/80 leading-relaxed">
+            <h3 className="text-2xl font-bold text-white mb-4 glow-text group-hover:scale-105 transition-transform duration-300">College Info</h3>
+            <p className="text-white/80 leading-relaxed group-hover:text-white transition-colors duration-300">
               Explore comprehensive information about colleges and universities in Jammu & Kashmir with detailed guidance.
             </p>
+            <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <BookOpen className="w-6 h-6 text-accent-pink mx-auto animate-bounce-soft" />
+            </div>
           </div>
         </div>
       </div>
